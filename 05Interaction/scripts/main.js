@@ -18,6 +18,6 @@ rotationSpeed = 0.01;
 });
 
 myOtherBox.addEventListener('mouseleave', function(){
-	rotationSpeed = 0.001;
+	rotationSpeed = 0.002;
 	// 	console.log('mouse enter');
 	});
