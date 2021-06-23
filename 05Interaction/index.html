@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="viewport" content="width=device-width">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+   
+    <a-scene background="color: #333333">
+        <!-- BOX houten texture 1--> 
+        <img id="wood" src="images/wood.jpg" /> 
+
+        <!-- BOX houten texture 2--> 
+          <img id="wood2" src="images/wood2.jpg" /> 
+
+        <!-- GROND gras texture-->
+        <img id="grass" src="images/grass.jpg" /> 
+      
+          
+      <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+
+      <!-- BOX 1  kleuren-->
+      <a-box
+       id="myBox" 
+        position="-1 1 -3" 
+        rotation="0 45 0" 
+        width="3" 
+        height="1" 
+        depth="1" 
+        material="src: #wood"
+        shadow 
+        animation__mouseenter="
+          property: components.material.material.color; 
+          type: color;
+          from: red; 
+          to: violet; 
+          startEvents: mouseenter; 
+          dur: 750;"
+        animation__mouseleave="
+          property: components.material.material.color; 
+          type: color; 
+          from: orange; 
+          to: green; 
+          startEvents: mouseleave; 
+          dur: 750;"> 
+          
+      </a-box>
+
+      <!--BOX 2 javascrip-->  
+      <a-box id="myOtherBox" 
+        position="2 1 -3" 
+        rotation="0 45 0" 
+        width="3" 
+        height="1" 
+        depth="1" 
+        material="src: #wood2"
+        shadow>  
+      </a-box>
+      <a-plane id="ground"
+        position="0 0 -4" 
+        rotation="-90 0 0" 
+        width="100" 
+        height="100" 
+        color="#7BC8A4" 
+        material="src: #grass; repeat: 10 10"
+        shadow>
+      </a-plane> 
+    </a-scene>
+  </body>
+</html>
